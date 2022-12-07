@@ -17,11 +17,10 @@ const ButtonFS = function ButtonFS() {
                 
                 console.log("##clicked unset")
                 const main = document.querySelector("div[data-test-id='software-board.board-area']")
-                    
                 main.parentNode.previousSibling.style.display = "block";
             
                 const topNav = document.querySelector("#ak-jira-navigation")
-                topNav.style.disable = "block"
+                topNav.style.display = "block"
 
                 const sideNav = document.querySelector("#ak-side-navigation")
                 sideNav.style.display = "block"
@@ -30,7 +29,6 @@ const ButtonFS = function ButtonFS() {
             } else {
                 console.log("##clicked set")
                 const board = document.querySelector("div[data-test-id='software-board.board-area']")
-                    
                 board.parentNode.previousSibling.style.display = "none";
             
                 const topNav = document.querySelector("#ak-jira-navigation")
@@ -97,12 +95,13 @@ function init() {
             if (document.querySelector('#button_fs') === null || document.querySelector('#button_fs') === undefined) {
                 //main.insertBefore(button.getElement(), main.childNodes[0])
 
-                button.getElement().style.position = "fixed"
-                button.getElement().style.bottom = "0px"
-                button.getElement().style.right = "0px"
-                button.getElement().style.zIndex = "9999"
+
+                const floatingButtons = document.querySelector('#jira-frontend > div:last-child')
+
+                button.getElement().style.marginLeft = "20px"
+                button.getElement().style.pointerEvents = "auto"
                                 
-                document.body.appendChild(button.getElement());
+                floatingButtons.appendChild(button.getElement());
             }
         })
         observer.observe(main, { subtree: true, childList: true })
