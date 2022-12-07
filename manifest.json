@@ -6,9 +6,9 @@
     "homepage_url": "https://github.com/rui-costa/jira_fullscreen_board",
     "content_scripts": [
         {
-          "matches": ["https://*.atlassian.net/secure/RapidBoard.jspa*"],
+          "matches": ["https://*.atlassian.net/*"],
           "run_at": "document_end",
-          "js": ["extension.js"]
+          "js": ["code.js", "extension.js"]
         }
       ],
       "icons": { "16": "icon16.png",

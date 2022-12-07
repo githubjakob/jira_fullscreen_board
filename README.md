@@ -1,5 +1,9 @@
 # Full-Screen agile board mode for Jira
 
+> Forked from https://github.com/rui-costa/jira_fullscreen_board 
+> I did some quick and dirty rewrite so that it works with the current Jira version (December 2022)
+> Needs some more cleanup and polishing!
+
 This extension improves the readability of the agile boards of Atlassian Jira.
 Works perfectly with both the Scrum and the Kanban boards.
 

@@ -11,21 +11,44 @@ const ButtonFS = function ButtonFS() {
     this.element.style.margin = '4px 8px 0px 0px'
     this.element.innerHTML = '<span class="material-icons">settings_overscan</span>'
     this.element.addEventListener('click', () => {
-        if (this.clicked) {
-            document.getElementById('ghx-header').style.display = ''
-            document.getElementById('navigation-app').style.display = ''
-            document.getElementById('content').style.margin = ''
-            document.getElementById('content').style.borderTop = ''
-            document.getElementById('ghx-quick-filters').style.marginBottom = ''
-            document.getElementById('ghx-work').style.height = hBoard
-        } else {
-            document.getElementById('ghx-header').style.display = 'none'
-            document.getElementById('navigation-app').style.display = 'none'
-            document.getElementById('content').style.margin = '2px'
-            document.getElementById('content').style.borderTop = '2px'
-            document.getElementById('ghx-quick-filters').style.marginBottom = '0px'
-            document.getElementById('ghx-work').style.height = `${window.innerHeight}px`
+        try {
+            console.log("####clicked")
+            if (this.clicked) {
+                
+                console.log("##clicked unset")
+                const main = document.querySelector("div[data-test-id='software-board.board-area']")
+                    
+                main.parentNode.previousSibling.style.display = "block";
+            
+                const topNav = document.querySelector("#ak-jira-navigation")
+                topNav.style.disable = "block"
+
+                const sideNav = document.querySelector("#ak-side-navigation")
+                sideNav.style.display = "block"
+                
+                
+            } else {
+                console.log("##clicked set")
+                const board = document.querySelector("div[data-test-id='software-board.board-area']")
+                    
+                board.parentNode.previousSibling.style.display = "none";
+            
+                const topNav = document.querySelector("#ak-jira-navigation")
+                topNav.style.display = "none"
+
+                const sideNav = document.querySelector("#ak-side-navigation")
+                sideNav.style.display = "none"
+    
+    
+                const main = document.querySelector('#ak-main-content')
+                main.style.position = 'fixed'
+                main.style.top = '0px'
+    
+            }
+        } catch (error) {
+            console.log("##error", error)
         }
+        
 
         this.click()
     })
@@ -50,7 +73,8 @@ const ButtonFS = function ButtonFS() {
 const button = new ButtonFS()
 
 function init() {
-    const main = document.querySelector('#ghx-quick-filters')
+  
+    const main = document.querySelector("header")
 
     if (main === null || main === undefined) {
         // try again in 500ms
@@ -71,7 +95,14 @@ function init() {
         // NOTE: Observe for modifications of content when navigating pages
         const observer = new MutationObserver(() => {
             if (document.querySelector('#button_fs') === null || document.querySelector('#button_fs') === undefined) {
-                main.insertBefore(button.getElement(), main.childNodes[0])
+                //main.insertBefore(button.getElement(), main.childNodes[0])
+
+                button.getElement().style.position = "fixed"
+                button.getElement().style.bottom = "0px"
+                button.getElement().style.right = "0px"
+                button.getElement().style.zIndex = "9999"
+                                
+                document.body.appendChild(button.getElement());
             }
         })
         observer.observe(main, { subtree: true, childList: true })
