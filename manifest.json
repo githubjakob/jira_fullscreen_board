@@ -2,8 +2,7 @@
     "manifest_version": 2,
     "version": "1.20.708",
     "name": "Full-Screen agile board mode for Jira",
-    "author":"Rui Costa",
-    "homepage_url": "https://github.com/rui-costa/jira_fullscreen_board",
+    "homepage_url": "https://github.com/githubjakob/jira_fullscreen_board",
     "content_scripts": [
         {
           "matches": ["https://*.atlassian.net/*"],

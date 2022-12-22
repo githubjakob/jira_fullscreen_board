@@ -1,7 +1,4 @@
 (async function main() {
-    try {
-        init()
-    } catch (error)  {
-        console.log("###error", error)
-    }
+    // eslint-disable-next-line no-undef
+    init()
 }())

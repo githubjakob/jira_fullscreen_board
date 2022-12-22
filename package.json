@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rui-costa/jira_fullscreen_board.git"
+    "url": "git+https://github.com/githubjakob/jira_fullscreen_board"
   },
   "keywords": [
     "jira",
@@ -16,12 +16,19 @@
     "fullscreen",
     "agile"
   ],
-  "author": "Rui Costa",
+  "contributors" : [
+    {
+      "name" : "Rui Costa"
+    },
+    {
+      "name" : "Jakob"
+    }
+  ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rui-costa/jira_fullscreen_board/issues"
+    "url": "https://github.com/githubjakob/jira_fullscreen_board/issues"
   },
-  "homepage": "https://github.com/rui-costa/jira_fullscreen_board#readme",
+  "homepage": "https://github.com/githubjakob/jira_fullscreen_board#readme",
   "devDependencies": {
     "eslint": "^7.5.0",
     "eslint-config-airbnb-base": "^14.2.0",
